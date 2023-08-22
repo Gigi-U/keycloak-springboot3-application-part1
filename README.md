@@ -15,6 +15,7 @@ Comenzamos a agregar módulos para un e-commerce existente, para esta etapa nos 
 Diagrama del sistema:
  
 Queda pendiente agregar seguridad al sistema, por lo tanto, se nos pide:
+
 👉🏻 En KeyCloak
 
     ✔️    Crear un client para luego configurar en el gateway con el tipo de acceso en confidencial. (client-secret)
