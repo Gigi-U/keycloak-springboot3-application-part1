@@ -1,0 +1,46 @@
+# Configuraciones del servidor
+server:
+  port: 8090
+# Configuraciones de spring cloud
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak-provider:
+            issuer-uri: http://localhost:8080/realms/CodeMastersElearning
+        registration:
+          keycloak-provider:
+            client-id: api-gateway-client
+            client-secret: QxYPDHeCiRrtE2DmvI3tyJo30JedLRoU
+            scope:
+              - openid
+              - print
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8090/login/oauth2/code/keycloak
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: ms-bills
+          uri: lb://ms-bills
+#          uri: http://localhost:8086
+          predicates:
+            - Path= /api/v1/**
+          filters:
+            - StripPrefix=2
+  application:
+    name: ms-gateway
+# Configuraciones de eureka
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+
