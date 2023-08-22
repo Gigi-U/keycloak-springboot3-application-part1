@@ -463,9 +463,9 @@
   "otpPolicyPeriod": 30,
   "otpPolicyCodeReusable": false,
   "otpSupportedApplications": [
-    "totpAppMicrosoftAuthenticatorName",
+    "totpAppFreeOTPName",
     "totpAppGoogleName",
-    "totpAppFreeOTPName"
+    "totpAppMicrosoftAuthenticatorName"
   ],
   "webAuthnPolicyRpEntityName": "keycloak",
   "webAuthnPolicySignatureAlgorithms": [
@@ -526,12 +526,6 @@
     }
   ],
   "scopeMappings": [
-    {
-      "clientScope": "print",
-      "roles": [
-        "app_user"
-      ]
-    },
     {
       "clientScope": "offline_access",
       "roles": [
@@ -780,7 +774,6 @@
         "email"
       ],
       "optionalClientScopes": [
-        "print",
         "address",
         "phone",
         "offline_access",
@@ -1027,18 +1020,6 @@
     }
   ],
   "clientScopes": [
-    {
-      "id": "ed03df7a-e719-40ee-b17f-89a8223b9210",
-      "name": "print",
-      "description": "",
-      "protocol": "openid-connect",
-      "attributes": {
-        "include.in.token.scope": "true",
-        "display.on.consent.screen": "true",
-        "gui.order": "",
-        "consent.screen.text": ""
-      }
-    },
     {
       "id": "f7b37877-f0e5-4e19-9815-be5ea8075982",
       "name": "acr",
@@ -1558,8 +1539,7 @@
     "offline_access",
     "address",
     "phone",
-    "microprofile-jwt",
-    "print"
+    "microprofile-jwt"
   ],
   "browserSecurityHeaders": {
     "contentSecurityPolicyReportOnly": "",

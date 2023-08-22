@@ -15,7 +15,6 @@ spring:
             client-secret: QxYPDHeCiRrtE2DmvI3tyJo30JedLRoU
             scope:
               - openid
-              - print
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:8090/login/oauth2/code/keycloak
   cloud:

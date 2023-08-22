@@ -25,12 +25,10 @@ public class KeyCloakJwtAuthenticationConverter implements Converter <Jwt, Abstr
 
         resourcesRoles.addAll(extractALL("resource_access", objectMapper.readTree(objectMapper.writeValueAsString(jwt)).get("claims")));
         resourcesRoles.addAll(extractALL("realm_access", objectMapper.readTree(objectMapper.writeValueAsString(jwt)).get("claims")));
-        resourcesRoles.addAll(extractALL("aud", objectMapper.readTree(objectMapper.writeValueAsString(jwt)).get("claims")));
-        resourcesRoles.addAll(extractALL("scope", objectMapper.readTree(objectMapper.writeValueAsString(jwt)).get("claims")));
 
         return resourcesRoles;
     }
-    //  PERSONALIZADO
+    //  PERSONALIZANDO EXTRACCIÓN. Es más interesante cuando hay más factores.
     private static List<GrantedAuthority> extractALL(String route, JsonNode jwt) {
 
         Set<String> allWithPrefix = new HashSet<>();
@@ -51,23 +49,9 @@ public class KeyCloakJwtAuthenticationConverter implements Converter <Jwt, Abstr
                         .path("roles")
                         .elements()
                         .forEachRemaining(r -> allWithPrefix.add("ROLE_" + r.asText()));
-                break;
 
-            case "aud" :
-                jwt
-                        .path("aud")
-                        .elements()
-                        .forEachRemaining(e ->allWithPrefix.add("AUD_" + e.asText()));
-                break;
-
-            case "scope" :
-                jwt
-                        .path("scope")
-                        .elements()
-                        .forEachRemaining(e -> allWithPrefix.add("SCOPE_" + e.asText()));
             default:
         }
-
         final List<GrantedAuthority> authorityList = AuthorityUtils.createAuthorityList(allWithPrefix.toArray(new String[0]));
 
         return authorityList;

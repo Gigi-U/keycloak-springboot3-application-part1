@@ -12,7 +12,7 @@ PASOS:
 
 ⚠️Keycloak Users ⚠️
 
-   1. gisela (con rol) - acceso a listado y scope
+   1. gisela (con rol) - acceso a listado
    2. cosme (sin rol) -sin acceso a recursos
       
 # Trabajo práctico

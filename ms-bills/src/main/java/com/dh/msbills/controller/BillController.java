@@ -24,11 +24,5 @@ public class BillController {
         return ResponseEntity.ok().body(service.getAllBill());
     }
 
-    @GetMapping("/scope")
-    @PreAuthorize("hasAnyAuthority('SCOPE_print')")
-    public String withScope() {
-        return "Only for Scope Print";
-    }
-
 
 }
