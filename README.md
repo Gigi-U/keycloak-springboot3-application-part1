@@ -3,6 +3,7 @@
 ⚠️LEVANTAR MICROSERVICIOS ⚠️
 
 PASOS:
+
     1.	Docker Desktop
     2.	Config-server
     3.	Ms-discovery
