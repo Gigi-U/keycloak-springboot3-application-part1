@@ -10,11 +10,11 @@ PASOS:
     4.	Ms-bills
     5.	Ms-gateway
 
-⚠️Users ⚠️
+⚠️Keycloak Users ⚠️
 
    1. gisela (con rol) - acceso a listado y scope
    2. cosme (sin rol) -sin acceso a recursos
-
+      
 # Trabajo práctico
 
 Comenzamos a agregar módulos para un e-commerce existente, para esta etapa nos piden un microservicio que se encargue de gestionar las facturas de los clientes y que, entre otras cosas, nos facilite la descarga de facturas. El equipo de desarrollo avanzó creando un API gateway y creando el microservicio Bills, encargado de gestionar las facturas. 
