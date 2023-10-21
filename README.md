@@ -1,5 +1,8 @@
 # urriza_y_spreafichi_gisela_parcial1_eb2 🚀👾
+Spring boot 3.1.2  -  keycloak 21.0.1  - java 17
+2 microservices - gateway - discovery - config server
 
+ 
 ⚠️LEVANTAR MICROSERVICIOS ⚠️
 
 PASOS:
