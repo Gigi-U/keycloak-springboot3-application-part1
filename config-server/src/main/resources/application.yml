@@ -8,6 +8,6 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Gigi-U/ConfigServer
+          uri: https://github.com/Gigi-U/config-server-keycloak-springboot3-application-part1
           force-pull: true
           search-paths: configData
